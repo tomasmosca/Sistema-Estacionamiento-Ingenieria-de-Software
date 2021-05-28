@@ -2,7 +2,7 @@ function loadDoc(url){
     var xhttp = new XMLHttpRequest();
     xhttp.onreadystatechange = function(){
         if(this.readyState == 4 && this.status == 200){
-
+            var ele = document.getElementById("carga");
             var cont = 0;
             var tabla = document.getElementById("tablaInfracciones");   //se crea la tabla
             var fila0 = tabla.insertRow(cont);                          //primera fila y columnas
@@ -32,6 +32,7 @@ function loadDoc(url){
                     cont++;                                    //siguiente fila
                 }
             }
+            ele.style.display = "none";
             document.getElementById("tablaInfracciones").appendChild(tabla);     //se inserta tabla generada
             }
         };
@@ -42,6 +43,10 @@ function loadDoc(url){
 function cargarTabla(){
     var textoPatente = document.getElementById("patente").value;
 	var url = "https://infraccionesweb.herokuapp.com/api/"+textoPatente+"/infracciones/";
+    if(textoPatente != ""){
+        var elem = document.getElementById("carga");
+        elem.style.display = "inline";
+    }
 	loadDoc(url);
 }
 
