@@ -12,6 +12,7 @@ function loadDoc(url){
 
             var texto = JSON.parse(this.responseText)               //se convierte el json a objeto
             var infraccion = texto.infracciones;
+            console.log(infraccion);
             celda1.innerHTML = "<strong>ID</strong>";               //se inserta el texto en las celdas(primera fila)
             celda2.innerHTML = "<strong>Tipo</strong>";
             celda3.innerHTML = "<strong>Monto a pagar</strong>";
@@ -20,8 +21,8 @@ function loadDoc(url){
             for (i=0;i<infraccion.length;i++){
                 if(infraccion[i].id != undefined){    
                     var id = infraccion[i].id;                 //se obtienen los atributos del objeto infraccion
-                    var tipo = infraccion[i].tipo;
-                    var monto = infraccion[i].monto;
+                    var tipo = infraccion[i].tipoInfraccion;
+                    var monto = infraccion[i].montoAPagar;
                     var fila1 = tabla.insertRow(cont);         //segunda fila y columnas
                     var celda1 = fila1.insertCell(0);
                     var celda2 = fila1.insertCell(1);
@@ -33,7 +34,7 @@ function loadDoc(url){
                 }
             }
             ele.style.display = "none";
-            document.getElementById("tablaInfracciones").appendChild(tabla);     //se inserta tabla generada
+            //document.getElementById("tablaInfracciones").innerHTML(tabla);     //se inserta tabla generada
             }
         };
     xhttp.open("GET", url, true);
