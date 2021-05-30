@@ -21,7 +21,7 @@ function loadDoc(url){
             for (i=0;i<infraccion.length;i++){
                 if(infraccion[i].id != undefined){    
                     var id = infraccion[i].id;                 //se obtienen los atributos del objeto infraccion
-                    var tipo = infraccion[i].tipoInfraccion;
+                    var tipo = obtenerInfraccion(infraccion[i].tipoInfraccion);
                     var monto = infraccion[i].montoAPagar;
                     var fila1 = tabla.insertRow(cont);         //segunda fila y columnas
                     var celda1 = fila1.insertCell(0);
@@ -34,11 +34,27 @@ function loadDoc(url){
                 }
             }
             ele.style.display = "none";
-            //document.getElementById("tablaInfracciones").innerHTML(tabla);     //se inserta tabla generada
             }
         };
     xhttp.open("GET", url, true);
     xhttp.send();
+}
+
+function obtenerInfraccion(n){
+    var xmlhttprequest = new XMLHttpRequest();
+    var textoInfraccion;
+    var url = "https://infraccionesweb.herokuapp.com/api/tiposInfraccion/"+n+"/";
+
+    xmlhttprequest.onreadystatechange = function() {
+        if (this.readyState == 4 && this.status == 200) {
+            var infraccion = JSON.parse(this.responseText);
+            textoInfraccion = infraccion.tipo.descripcion;
+        }
+    };
+    xmlhttprequest.open("GET", url, false);
+    xmlhttprequest.send();
+    
+    return textoInfraccion;
 }
 
 function cargarTabla(){
@@ -51,4 +67,4 @@ function cargarTabla(){
 	loadDoc(url);
 }
 
-// le faltaria determinar la infraccion, monto a pagar y el acarreo. falta mejorar la tabla con bootstrap
+// le faltaria determinar el acarreo. falta mejorar la tabla con bootstrap
