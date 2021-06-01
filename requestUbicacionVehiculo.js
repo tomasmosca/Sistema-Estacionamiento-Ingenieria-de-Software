@@ -35,3 +35,4 @@ function cargarTexto(){
 //falta manejar los errores 404 para cuando no se encuentra un id de infraccion o una patente con acarreo y cuando no funciona el servidor.
 //falta manejar cuando no se encuentra un deposito
 //falta mejorar bootstrap
+//boton load
