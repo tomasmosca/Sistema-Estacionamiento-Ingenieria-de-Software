@@ -86,4 +86,4 @@ function cargarTabla(){
 	loadDoc(url);
 }
 
-// le faltaria determinar el acarreo. falta mejorar la tabla con bootstrap
+// falta mejorar la tabla con bootstrap
