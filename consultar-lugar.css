@@ -11,3 +11,15 @@
     margin: 10px 7px 10px 7px;
   
   }
+#volver{
+    color:rgb(0, 0, 0);
+    font-family:Verdana;
+    border: none;
+    width: 95%;
+    
+    font-size: 20px;
+    background: #4886e9;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+  }

@@ -12,7 +12,7 @@ function bootstrap() {
 
     L.control.custom({
       position: 'bottomleft',
-      content : '<button class="btn btn-default btn-sm" id="">'+
+      content : '<button class="btn btn-default btn-sm" id="volver">'+
                 '<strong>Volver Atras</strong>'+
                 '</button>',
       classes : '',
