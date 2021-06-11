@@ -14,3 +14,69 @@ input[type=text], input[type=password]{
   .botonCargando{
       display: none;
   }
+body{
+      background: url(imagen.jpg);
+      -webkit-background-size: cover ;
+      background-size:cover;
+      background-attachment: fixed;
+
+  }
+  
+
+  .container-fluid  {
+      font-weight: normal;
+      font-family: sans-serif;
+      color:#eeeaea;
+      
+      font-family: Verdana;
+      position:relative;
+  
+  }
+  
+
+  .container-fluid{
+      background: rgba(0,0,0,.6);
+      width: 90%;
+      max-width: 650px;
+      margin:auto;
+      padding:5px 35px;
+      margin-top: 30px;
+      padding-bottom: 30px;
+      border-radius: 3px;
+  }
+  input[type="text"],[type="email"],[type="password"]{
+      background:rgba(0,0,0,.7);
+      border: none;
+      outline:none;
+      border-bottom:2px solid #1b1fff;
+      width:100%;
+      padding: 12px;
+      margin-bottom: 20px;
+      border-radius:2px;
+      font-size:14px;
+      color:#FFF;
+      font-family:Roboto;
+
+  }
+  button[type="submit"]{
+    color:rgb(0, 0, 0);
+    font-family:Verdana;
+    border: none;
+    width: 95%;
+    
+    font-size: 20px;
+    background: #4886e9;
+    padding: 15px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  li{
+    font-size:20px;
+    color:rgb(252, 252, 253);
+  }
+  
+  h1{
+    text-align: center;
+    
+    font-size: 40px;
+}
