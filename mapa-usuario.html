@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+
+<html lang="es">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <title>Comercios Adheridos</title>
+        <link rel="stylesheet" type="text/css" media="screen" href="consultar-lugar.css">
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="./leaflet/leaflet.css">
+        <link rel="stylesheet" href="./leaflet/L.Control.Sidebar.css">
+        <link rel="stylesheet" href="./leaflet/leaflet.legend.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <script src="./leaflet/leaflet.js"></script>
+        <script src="./mapa-usuario.js"></script>
+        <script src="./leaflet/Leaflet.Control.Custom.js"></script>
+        <script src="./leaflet/L.Control.Sidebar.js"></script>
+        <script src="./leaflet/leaflet.legend.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+        <link rel="stylesheet" href="./leaflet/MarkerCluster.css">
+        <link rel="stylesheet" href="./leaflet/MarkerCluster.Default.css">
+        <script src="./leaflet/leaflet.markercluster-src.js"></script>
+        <script type="text/javascript" src="zona.js"></script>
+        <script type="text/javascript" src="comercio.js"></script>
+    </head>
+    <body onload="bootstrap();">
+        <div id="mapid">
+        </div>
+        <div id="sidebar">
+            <h1>Consultas comercios Adheridos</h1>
+            <p>En este mapa se puede visualizar los Comercios Adheridos para realizar carga de saldos o poder reservar estacionamiento si no posse una cuenta,
+                ver informacion adicional sobre los mismos y visualizar las zonas en los que los comercios se encuentran
+                tambien podra ver su estacionamiento actual. Para consultar lugar de estacionamiento dirijase al menu principal y haga click en la opcion consultar lugar.
+            En la parte abajo a la derecha de la pantalla podra ver la leyenda con informacion de cada icono en el mapa.</p>
+        </div>
+    </body>
+</html>
