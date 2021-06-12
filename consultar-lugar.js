@@ -82,8 +82,8 @@ function bootstrap() {
     estacionamientosAzules[1] = new estacionamiento("bbbb-0002",zonaAzul,L.latLng(-34.51707,-58.71518),"libre","");
     estacionamientosAzules[2] = new estacionamiento("cccc-0003",zonaAzul,L.latLng(-34.51930, -58.71246),"libre","");
     estacionamientosAzules[3] = new estacionamiento("dddd-0004",zonaAzul,L.latLng(-34.52130, -58.71546),"libre","");
-    estacionamientosAzules[4] = new estacionamiento("eeee-0005",zonaAzul,L.latLng(-34.51530, -58.71446),"ocupado","");
-    estacionamientosAzules[5] = new estacionamiento("ffff-0006",zonaAzul,L.latLng(-34.51930, -58.71846),"ocupado","");
+    estacionamientosAzules[4] = new estacionamiento("eeee-0005",zonaAzul,L.latLng(-34.51530, -58.71446),"libre","");
+    estacionamientosAzules[5] = new estacionamiento("ffff-0006",zonaAzul,L.latLng(-34.51930, -58.71846),"libre","");
 
 	  var miEstacionamiento = new estacionamiento("abc-123",zonaAzul,L.latLng(-34.52079,-58.71300),"ocupado","AAA-000");
   
@@ -173,7 +173,7 @@ function bootstrap() {
     polygonZonaVerde.bindPopup("Zona Verde");
 
     var estacionamientosVerdes = [];
-    estacionamientosVerdes[0] = new estacionamiento("dfgf-0032",zonaVerde,L.latLng(-34.524405, -58.707955),"ocupado","");
+    estacionamientosVerdes[0] = new estacionamiento("dfgf-0032",zonaVerde,L.latLng(-34.524405, -58.707955),"libre","");
     estacionamientosVerdes[1] = new estacionamiento("hjy-005",zonaVerde,L.latLng(-34.521126, -58.706539),"libre","");
     estacionamientosVerdes[2] = new estacionamiento("cfgs-0073",zonaVerde,L.latLng(-34.520489, -58.70214),"libre","");
 

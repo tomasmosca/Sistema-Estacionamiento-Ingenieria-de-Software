@@ -43,10 +43,6 @@ function bootstrap() {
           type: "image",
           url: "leaflet/images/icons8-shop-location-48.png",
       }, {
-          label: "Estacionamiento Actual",
-          type: "image",
-          url: "leaflet/images/icons8-car-30.png"
-      }, {
           label: "Zona Azul",
           type: "polyline",
           color: "#0000ff",
@@ -63,8 +59,6 @@ function bootstrap() {
       }]
     }).addTo(map);
 
-    // ---Elementos Zona Azul---
-
     var zonaAzul = new zona("azul", [
 		L.latLng(-34.515594, -58.705654),
 		L.latLng(-34.523503, -58.714062),
@@ -74,35 +68,39 @@ function bootstrap() {
 		L.latLng(-34.513824, -58.707584),
 	]);
 
-    var estacionamientosAzules = [];
-    estacionamientosAzules[0] = new comercio("aaaa-0001",zonaAzul,L.latLng(-34.51601,-58.71135),"libre","");
-    estacionamientosAzules[1] = new comercio("bbbb-0002",zonaAzul,L.latLng(-34.51707,-58.71518),"libre","");
-    estacionamientosAzules[2] = new comercio("cccc-0003",zonaAzul,L.latLng(-34.51930, -58.71246),"libre","");
-    estacionamientosAzules[3] = new comercio("dddd-0004",zonaAzul,L.latLng(-34.52130, -58.71546),"libre","");
-    estacionamientosAzules[4] = new comercio("eeee-0005",zonaAzul,L.latLng(-34.51530, -58.71446),"ocupado","");
-    estacionamientosAzules[5] = new comercio("ffff-0006",zonaAzul,L.latLng(-34.51930, -58.71846),"ocupado","");
+  var zonaVerde = new zona("verde", [
+    L.latLng(-34.515769, -58.705573),
+    L.latLng(-34.523671, -58.713834),
+    L.latLng(-34.528003, -58.70774),
+    L.latLng(-34.52056, -58.699844),
+    L.latLng(-34.51568, -58.705552),
+    //L.latLng(-34.513824, -58.707584),
+  ]);
 
-	  var miEstacionamiento = new comercio("abc-123",zonaAzul,L.latLng(-34.52079,-58.71300),"ocupado","AAA-000");
+    var comercios = [];
+    comercios[0] = new comercio("Panaderia Imperio","imp-3423",zonaAzul,"Maza","2870",L.latLng(-34.516035, -58.708301));
+    comercios[1] = new comercio("Polleria Pipicucu","cucu-4632",zonaAzul,"Velazquez","3286",L.latLng(-34.516095, -58.716576));
+    comercios[2] = new comercio("Panaderia La Moderna","moderna-3453",zonaAzul,"25 de Mayo","901",L.latLng(-34.515194, -58.713416));
+    comercios[3] = new comercio("Tienda Si Mona","si-2675",zonaAzul,"Comodoro Rivadavia","2603",L.latLng(-34.519650, -58.715463));
+    comercios[4] = new comercio("Centro Comerical Jimena","jim-1145",zonaAzul,"Lourdes","3265",L.latLng(-34.518371, -58.718408));
+    comercios[5] = new comercio("La Madeleine","mad-5464",zonaVerde,"Carlos Pellegrini","699",L.latLng(-34.523402, -58.705562));
+    comercios[6] = new comercio("Maxikiosco","max-2323",zonaVerde,"Juan Mazza","2346",L.latLng(-34.519261, -58.703906));
+    comercios[7] = new comercio("Panaderia La Colonial","colo-2315",zonaVerde,"Eva Peron","487",L.latLng(-34.52349, -58.707939));
   
     var polygonZonaAzul = L.polygon(zonaAzul.limites).addTo(map);
-    polygonZonaAzul.bindPopup("Zona Azul");
+    //polygonZonaAzul.bindPopup("Zona Azul");
+
+    var polygonZonaVerde = L.polygon(zonaVerde.limites, {color: 'green'}).addTo(map);
+    //polygonZonaVerde.bindPopup("Zona Verde");
 
     // --iconos--
 
-   // var iconoEstacionamientoAzul = new L.Icon({
     var iconoComercios = new L.Icon({
         iconUrl: 'leaflet/images/icons8-shop-location-48.png',
         iconSize: [50, 55],
         iconAnchor: [12, 41],
         popupAnchor: [17, -24],
     });
-
-    var iconoAuto = new L.Icon({
-      iconUrl: 'leaflet/images/icons8-car-30.png',
-      iconSize: [45, 50],
-      iconAnchor: [12, 41],
-      popupAnchor: [10, -24],
-  });
 
     var sidebar = L.control.sidebar('sidebar', {
       closeButton: true,
@@ -119,61 +117,73 @@ function bootstrap() {
       sidebar.hide();
     })
 
-    // ---Marcadores y Cluster zona Azul---
+    // ---Marcadores y Cluster---
 
-    var markerMiEstacionamiento = L.marker(miEstacionamiento.ubicacion,  {icon: iconoAuto});
-	  markerMiEstacionamiento.bindPopup("<b>Estacionamiento Actual</b><br>"+"Codigo: "+miEstacionamiento.codigoUbicacion+"<br>"+"Zona: "+miEstacionamiento.zona.color+"<br>"+"Estado: "+miEstacionamiento.disponibilidad).openPopup();
-	  markerMiEstacionamiento.on('click', function () {
-      sidebar.setContent("<h1>Estacionamiento Actual</h1><br>"+"<h3>Informacion adicional</h3><br>"+"Su codigo de estacionamiento es "+miEstacionamiento.codigoUbicacion+"<br>"+"Su vehiculo se encuentra en zona "+miEstacionamiento.zona.color
-      +"<br>"+"El estacionamiento actual se encuentra "+miEstacionamiento.disponibilidad+"<br>"+"La patente de su vehiculo es "+miEstacionamiento.patente+"<br>"+"La hora de inicio del estacionamiento fue "
-      +miEstacionamiento.horaInicio+" hs"+"<br>"+"Para obtener el costo de la estadia finalize su estacionamiento desde el menu principal.");
+    var markersComercios = [];
+    for(i=0;i<comercios.length;i++){
+      markersComercios[i] = L.marker(comercios[i].ubicacion,  {icon: iconoComercios});
+      markersComercios[i].bindPopup("<b>Comercio</b><br>"+"Nombre: "+comercios[i].nombre+"<br>"+"Zona: "+comercios[i].zona.color+"<br>"+"Calle: "+comercios[i].calle).openPopup();
+      map.addLayer(markersComercios[i]);
+    }
+
+    markersComercios[0].on('click', function () {
+      sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[0].nombre+"</h3><br>"+comercios[0].calle+" "+comercios[0].altura+
+      ", Provincia de Buenos Aires<br>"+"<strong>Horarios:</strong> 8:00-20:00<br>"+"<strong>Codigo:</strong> "+comercios[0].codigo+"<br>"+"<strong>Zona:</strong> "+comercios[0].zona.color+"<br>"+"<img src=./leaflet/images/imgimperio.png />");
       sidebar.toggle();
     });
-    map.addLayer(markerMiEstacionamiento);
 
-    var markersEstacionamientosAzules = [];
-    for(i=0;i<estacionamientosAzules.length;i++){
-      markersEstacionamientosAzules[i] = L.marker(estacionamientosAzules[i].ubicacion,  {icon: iconoComercios});
-      markersEstacionamientosAzules[i].bindPopup("<b>Comercio</b><br>"+"Codigo: "+estacionamientosAzules[i].codigoUbicacion+"<br>"+"Zona: "+estacionamientosAzules[i].zona.color+"<br>"+"Estado: "+estacionamientosAzules[i].disponibilidad).openPopup();
-      map.addLayer(markersEstacionamientosAzules[i]);
-    }
+    markersComercios[1].on('click', function () {
+      sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[1].nombre+"</h3><br>"+comercios[1].calle+" "+comercios[1].altura+
+      ", Provincia de Buenos Aires<br>"+"<strong>Horarios:</strong> 7:00-20:00<br>"+"<strong>Codigo:</strong> "+comercios[1].codigo+"<br>"+"<strong>Zona:</strong> "+comercios[1].zona.color+"<br>"+"<img src=./leaflet/images/imgpolleria.png />");
+      sidebar.toggle();
+    });
+
+    markersComercios[2].on('click', function () {
+      sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[2].nombre+"</h3><br>"+comercios[2].calle+" "+comercios[2].altura+
+      ", Provincia de Buenos Aires<br>"+"<strong>Horarios:</strong> 8:30-20:00<br>"+"<strong>Codigo:</strong> "+comercios[2].codigo+"<br>"+"<strong>Zona:</strong> "+comercios[2].zona.color+"<br>"+"<img src=./leaflet/images/panaderiamoderna.png />");
+      sidebar.toggle();
+    });
+
+    markersComercios[3].on('click', function () {
+      sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[3].nombre+"</h3><br>"+comercios[3].calle+" "+comercios[3].altura+
+      ", Provincia de Buenos Aires<br>"+"<strong>Horarios:</strong> 8:00-20:00<br>"+"<strong>Codigo:</strong> "+comercios[3].codigo+"<br>"+"<strong>Zona:</strong> "+comercios[3].zona.color+"<br>"+"<img src=./leaflet/images/tienda.png />");
+      sidebar.toggle();
+    });
+
+    markersComercios[4].on('click', function () {
+      sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[4].nombre+"</h3><br>"+comercios[4].calle+" "+comercios[4].altura+
+      ", Provincia de Buenos Aires<br>"+"<strong>Horarios:</strong> 7:30-19:00<br>"+"<strong>Codigo:</strong> "+comercios[4].codigo+"<br>"+"<strong>Zona:</strong> "+comercios[4].zona.color+"<br>"+"<img src=./leaflet/images/centrojimena.png />");
+      sidebar.toggle();
+    });
+
+    markersComercios[5].on('click', function () {
+      sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[5].nombre+"</h3><br>"+comercios[5].calle+" "+comercios[5].altura+
+      ", Provincia de Buenos Aires<br>"+"<strong>Horarios:</strong> 7:00-21:00<br>"+"<strong>Codigo:</strong> "+comercios[5].codigo+"<br>"+"<strong>Zona:</strong> "+comercios[5].zona.color+"<br>"+"<img src=./leaflet/images/madeleine.png />");
+      sidebar.toggle();
+    });
+
+    markersComercios[6].on('click', function () {
+      sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[6].nombre+"</h3><br>"+comercios[6].calle+" "+comercios[6].altura+
+      ", Provincia de Buenos Aires<br>"+"<strong>Horarios:</strong> 8:30-20:00<br>"+"<strong>Codigo:</strong> "+comercios[6].codigo+"<br>"+"<strong>Zona:</strong> "+comercios[6].zona.color+"<br>"+"<img src=./leaflet/images/maxikiosco.png />");
+      sidebar.toggle();
+    });
+
+    markersComercios[7].on('click', function () {
+      sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[7].nombre+"</h3><br>"+comercios[7].calle+" "+comercios[7].altura+
+      ", Provincia de Buenos Aires<br>"+"<strong>Horarios:</strong> 6:30-21:00<br>"+"<strong>Codigo:</strong> "+comercios[7].codigo+"<br>"+"<strong>Zona:</strong> "+comercios[7].zona.color+"<br>"+"<img src=./leaflet/images/panaderiacolonial.png />");
+      sidebar.toggle();
+    });
 
     var clusterZonaAzul = L.markerClusterGroup();
     clusterZonaAzul.addLayers([
-      markersEstacionamientosAzules[0],markersEstacionamientosAzules[1],markersEstacionamientosAzules[2], markersEstacionamientosAzules[3], 
-      markersEstacionamientosAzules[4], markersEstacionamientosAzules[5], markerMiEstacionamiento
+      markersComercios[0],markersComercios[1],markersComercios[2], markersComercios[3], 
+      markersComercios[4]
       ]);
     map.addLayer(clusterZonaAzul);
 
-    // ---Elementos Zona Verde---
-
-    var zonaVerde = new zona("verde", [
-      L.latLng(-34.515769, -58.705573),
-      L.latLng(-34.523671, -58.713834),
-      L.latLng(-34.528003, -58.70774),
-      L.latLng(-34.52056, -58.699844),
-      L.latLng(-34.51568, -58.705552),
-      //L.latLng(-34.513824, -58.707584),
-    ]);
-
-    var polygonZonaVerde = L.polygon(zonaVerde.limites, {color: 'green'}).addTo(map);
-    polygonZonaVerde.bindPopup("Zona Verde");
-
-    var estacionamientosVerdes = [];
-    estacionamientosVerdes[0] = new comercio("dfgf-0032",zonaVerde,L.latLng(-34.524405, -58.707955),"ocupado","");
-    estacionamientosVerdes[1] = new comercio("hjy-005",zonaVerde,L.latLng(-34.521126, -58.706539),"libre","");
-    estacionamientosVerdes[2] = new comercio("cfgs-0073",zonaVerde,L.latLng(-34.520489, -58.70214),"libre","");
-
-    var markersEstacionamientosVerdes = [];
-    for(i=0;i<estacionamientosVerdes.length;i++){
-      markersEstacionamientosVerdes[i] = L.marker(estacionamientosVerdes[i].ubicacion,  {icon: iconoComercios});
-      markersEstacionamientosVerdes[i].bindPopup("<b>Comercio</b><br>"+"Codigo: "+estacionamientosVerdes[i].codigoUbicacion+"<br>"+"Zona: "+estacionamientosVerdes[i].zona.color+"<br>"+"Estado: "+estacionamientosVerdes[i].disponibilidad).openPopup();
-      map.addLayer(markersEstacionamientosVerdes[i]);
-    }
-
     var clusterZonaVerde = L.markerClusterGroup();
     clusterZonaVerde.addLayers([
-      markersEstacionamientosVerdes[0],markersEstacionamientosVerdes[1],markersEstacionamientosVerdes[2]
+      markersComercios[5],markersComercios[6],markersComercios[7]
       ]);
     map.addLayer(clusterZonaVerde);
 
@@ -188,7 +198,5 @@ function bootstrap() {
     }
 
     map.on('click', onMapClick);
-
-    //sidebar.show();
 
   }

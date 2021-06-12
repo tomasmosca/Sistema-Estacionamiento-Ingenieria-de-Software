@@ -1,10 +1,8 @@
-function comercio(codigoUbicacion,zona,ubicacion,disponibilidad,patente){
-	this.codigoUbicacion = codigoUbicacion;
+function comercio(nombre,codigo,zona,calle,altura,ubicacion){
+	this.nombre = nombre;
+	this.codigo = codigo;
 	this.zona = zona;
-	this.disponibilidad = disponibilidad;
-	this.patente = patente;
+	this.calle = calle;
+	this.altura = altura;
 	this.ubicacion = ubicacion;
-	//this.costo;
-	this.horaInicio = 11;
-	this.horaFin;
 }
