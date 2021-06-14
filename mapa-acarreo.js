@@ -1,4 +1,4 @@
-function bootstrap(lat,lon) { // VER INFO https://infraccionesweb.herokuapp.com/api/ABC123/acarreos/42
+function bootstrap(lat,lon,nombreDep, dirDep,horarios) { // VER INFO https://infraccionesweb.herokuapp.com/api/ABC123/acarreos/42
     // ---Se Crea Mapa---
     //UBICACION DE MAPA AL ABRIR
     var ungsLocation = [lat,lon];
@@ -47,8 +47,8 @@ function bootstrap(lat,lon) { // VER INFO https://infraccionesweb.herokuapp.com/
 
     // ---Elementos Zona Azul---
 
-	  var miEstacionamiento = new estacionamiento("abc-123","azul",L.latLng(lat,lon),"ocupado","AAA-000");
-  
+	  var miAcarreo = new acarreo(nombreDep,dirDep,L.latLng(lat,lon),horarios);
+   
     // --iconos--
 
     var iconoAuto = new L.Icon({
@@ -61,14 +61,12 @@ function bootstrap(lat,lon) { // VER INFO https://infraccionesweb.herokuapp.com/
     
     // ---Marcadores y Cluster zona Azul---
 
-    var markerMiEstacionamiento = L.marker(miEstacionamiento.ubicacion,  {icon: iconoAuto});
-	  markerMiEstacionamiento.bindPopup("<b>Estacionamiento Actual</b><br>"+"Codigo: "+miEstacionamiento.codigoUbicacion+"<br>"+"Zona: "+miEstacionamiento.zona.color+"<br>"+"Estado: "+miEstacionamiento.disponibilidad).openPopup();
+    var markerMiAcarreo = L.marker(miAcarreo.ubicacion,  {icon: iconoAuto});
+	  markerMiAcarreo.bindPopup("<b>Ubicación Actual</b><br>"+"Nombre: "+miAcarreo.nombre+"<br>"+"Calle: "+miAcarreo.calle+"<br>"+"Horarios: "+miAcarreo.horarios).openPopup();
+   
+    map.addLayer(markerMiAcarreo);
 
-    map.addLayer(markerMiEstacionamiento);
-
-    // ---Elementos Zona Verde---
-
-    //para armar zonas
+    //POPUP
     var popup = L.popup();
 
     function onMapClick(e) {
@@ -80,11 +78,4 @@ function bootstrap(lat,lon) { // VER INFO https://infraccionesweb.herokuapp.com/
 
     map.on('click', onMapClick);
 
-    //sidebar.show();
-
   }
-
-//falta manejar los errores 404 para cuando no se encuentra un id de infraccion o una patente con acarreo y cuando no funciona el servidor.
-//falta manejar cuando no se encuentra un deposito
-//falta mejorar bootstrap
-//boton load

@@ -9,11 +9,12 @@ function loadDoc(url){
             if(texto.acarreo.infraccionId != undefined){
                 var textoAcarreo;
                 if(deposito != undefined){
+                    popup=',"'+deposito.nombre+'"'+',"'+deposito.direccion+'"'+',"'+deposito.horarios+'"';
                     textoAcarreo = "El vehiculo con infraccion " + "<strong>"+texto.infraccion+"</strong>" + " y patente " + "<strong>"+texto.patente+"</strong>" + 
                     " se encuentra en el deposito " + "<strong>"+deposito.nombre+"</strong>" + 
                     " con la direccion " + "<strong>"+deposito.direccion+"</strong>" + ". El numero de telefono es " + "<strong>"+deposito.telefono+"</strong>" + 
                     " y los horarios son " + "<strong>"+deposito.horarios+
-                    "<a onclick='vermas()' href='javascript:bootstrap("+deposito.ubicacion.lat+","+deposito.ubicacion.lon+")' id='ver'> Ver en el mapa</a></strong>";
+                    "<a onclick='vermas()' href='javascript:bootstrap("+deposito.ubicacion.lat+","+deposito.ubicacion.lon+popup+")' id='ver'> Ver en el mapa</a></strong>";
                 }
 
                 var descripcionAcarreo = document.getElementById("respuestaTexto");
