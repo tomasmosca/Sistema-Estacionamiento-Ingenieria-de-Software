@@ -1,8 +1,7 @@
-function bootstrap() {// var ubicacion = texto.acarreo.deposito.ubicacion;
-                      // VER INFO https://infraccionesweb.herokuapp.com/api/ABC123/acarreos/42
+function bootstrap(lat,lon) { // VER INFO https://infraccionesweb.herokuapp.com/api/ABC123/acarreos/42
     // ---Se Crea Mapa---
     //UBICACION DE MAPA AL ABRIR
-    var ungsLocation = [-34.519079,-58.71900];//-34.522611, -58.71183
+    var ungsLocation = [lat,lon];
 
     var map = L.map('mapid').setView(ungsLocation, 16);
   
@@ -48,7 +47,7 @@ function bootstrap() {// var ubicacion = texto.acarreo.deposito.ubicacion;
 
     // ---Elementos Zona Azul---
 
-	  var miEstacionamiento = new estacionamiento("abc-123","azul",L.latLng(-34.52079,-58.71300),"ocupado","AAA-000");
+	  var miEstacionamiento = new estacionamiento("abc-123","azul",L.latLng(lat,lon),"ocupado","AAA-000");
   
     // --iconos--
 
