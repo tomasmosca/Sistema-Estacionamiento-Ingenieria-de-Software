@@ -9,7 +9,7 @@ function loadDoc(url){
             if(texto.acarreo.infraccionId != undefined){
                 var textoAcarreo;
                 if(deposito != undefined){
-                    popup=',"'+deposito.nombre+'"'+',"'+deposito.direccion+'"'+',"'+deposito.horarios+'"';
+                    popup=',"'+deposito.nombre+'"'+',"'+deposito.direccion+'"'+',"'+deposito.telefono+'"'+',"'+deposito.horarios+'"';
                     textoAcarreo = "El vehiculo con infraccion " + "<strong>"+texto.infraccion+"</strong>" + " y patente " + "<strong>"+texto.patente+"</strong>" + 
                     " se encuentra en el deposito " + "<strong>"+deposito.nombre+"</strong>" + 
                     " con la direccion " + "<strong>"+deposito.direccion+"</strong>" + ". El numero de telefono es " + "<strong>"+deposito.telefono+"</strong>" + 
