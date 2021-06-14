@@ -12,11 +12,15 @@ function loadDoc(url){
                     textoAcarreo = "El vehiculo con infraccion " + "<strong>"+texto.infraccion+"</strong>" + " y patente " + "<strong>"+texto.patente+"</strong>" + 
                     " se encuentra en el deposito " + "<strong>"+deposito.nombre+"</strong>" + 
                     " con la direccion " + "<strong>"+deposito.direccion+"</strong>" + ". El numero de telefono es " + "<strong>"+deposito.telefono+"</strong>" + 
-                    " y los horarios son " + "<strong>"+deposito.horarios+"</strong>";
+                    " y los horarios son " + "<strong>"+deposito.horarios+
+                    "<a onclick='vermas()' href='javascript:bootstrap()' id='ver'> Ver en el mapa</a></strong>";
                 }
 
                 var descripcionAcarreo = document.getElementById("respuestaTexto");
                 descripcionAcarreo.innerHTML = textoAcarreo;
+                
+                
+                
             }
         }
     };
@@ -31,8 +35,14 @@ function cargarTexto(){
     loadDoc(url);
 }
 
-
-//falta manejar los errores 404 para cuando no se encuentra un id de infraccion o una patente con acarreo y cuando no funciona el servidor.
-//falta manejar cuando no se encuentra un deposito
-//falta mejorar bootstrap
-//boton load
+function vermas() {
+    var eldiv =document.getElementById("mapid");
+    //Cuando no se vea el mapa
+    if (eldiv.style.display === "block"){
+        document.getElementById("ver").innerHTML='Ver en el mapa';
+        eldiv.style.display="none";
+    }else{  //Cuando se vea el mapa
+    //document.getElementById("ver").innerHTML='Ocultar';
+    eldiv.style.display="block";
+    } 
+}

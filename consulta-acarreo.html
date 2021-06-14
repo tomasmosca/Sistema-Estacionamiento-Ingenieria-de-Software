@@ -8,16 +8,32 @@
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" media="screen" href="consulta-acarreo.css">
+        
+        <!-- LO AGREGUE POR EL MAPA -->
+        <link rel="stylesheet" href="./leaflet/leaflet.css">
+
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
         <script type="text/javascript" src="requestUbicacionVehiculo.js"></script>
+        
+        <!-- LO AGREGUE POR EL MAPA -->
+        <script type="text/javascript" src="mapa-acarreo.js"></script>      
+        <script src="./leaflet/leaflet.js"></script>  
+        <script src="./leaflet/leaflet.legend.js"></script>
+        <script src="./leaflet/Leaflet.Control.Custom.js"></script>
+        <script type="text/javascript" src="zona.js"></script>
+        <script type="text/javascript" src="estacionamiento.js"></script>
         <script>
             function volverAtras() {
               window.history.back();
             }
         </script>
-    </head>
-    <body>
+
+     
+ </head>
+ <body>
+    
         <div class="container-fluid">
             <div id="busqueda">
                 <h2>Consulta acarreo</h2><br>
@@ -25,10 +41,14 @@
                 <input type="text" id="idInfraccion" name="idInfraccion" placeholder="id de infraccion" autocomplete="off"><br>
                 <button type="submit" onclick="cargarTexto()">Buscar</button><br><br>
                 <button type="submit" onclick="volverAtras()">Volver atras</button>
+                
             </div>
             <div id="respuesta">
                 <h5 id="respuestaTexto"></h5>
+                <div   id='mapid'></div>
+               
+                </div>
             </div>
-        </div>
+            
     </body>
 </html>
