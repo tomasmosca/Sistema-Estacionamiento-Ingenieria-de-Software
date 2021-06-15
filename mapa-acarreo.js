@@ -18,16 +18,16 @@ function bootstrap(lat,lon,nombreDep, dirDep,telefono,horarios) {
     classes : '',
     style   :
     {
-        margin: '5px 20px',
-        padding: '0px',
+      margin: '5px 20px',
+      padding: '0px',
     },
     events:
     {
-        click: function()
-        {
-            /*PARA CERRA PANTALLA*/
-            document.getElementById("mapid").style.display="none";
-        }
+      click: function()
+      {
+        /*PARA CERRA PANTALLA*/
+        document.getElementById("mapid").style.display="none";
+      }
     }
   })
   .addTo(map);
@@ -39,9 +39,9 @@ function bootstrap(lat,lon,nombreDep, dirDep,telefono,horarios) {
     opacity: 1,
     column: 1,
     legends: [{
-        label: "Estacionamiento Actual",
-        type: "image",
-        url: "leaflet/images/icons8-car-30.png"
+      label: "Estacionamiento Actual",
+      type: "image",
+      url: "leaflet/images/icons8-car-30.png"
     }]
   }).addTo(map);
 
@@ -50,7 +50,7 @@ function bootstrap(lat,lon,nombreDep, dirDep,telefono,horarios) {
   
   // --icono--
   var iconoAuto = new L.Icon({
-    iconUrl: 'leaflet/images/icons8-car-30.png',
+    iconUrl: 'leaflet/images/grua.png',
     iconSize: [45, 50],
     iconAnchor: [12, 41],
     popupAnchor: [10, -24],
@@ -68,9 +68,9 @@ function bootstrap(lat,lon,nombreDep, dirDep,telefono,horarios) {
 
   function onMapClick(e) {
     popup
-        .setLatLng(e.latlng)
-        .setContent("Posicion Clickeada: " + e.latlng.toString())
-        .openOn(map);
+      .setLatLng(e.latlng)
+      .setContent("Posicion Clickeada: " + e.latlng.toString())
+      .openOn(map);
   }
 
   map.on('click', onMapClick);

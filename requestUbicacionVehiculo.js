@@ -18,10 +18,7 @@ function loadDoc(url){
                 }
 
                 var descripcionAcarreo = document.getElementById("respuestaTexto");
-                descripcionAcarreo.innerHTML = textoAcarreo;
-                
-                
-                
+                descripcionAcarreo.innerHTML = textoAcarreo;   
             }
         }
     };

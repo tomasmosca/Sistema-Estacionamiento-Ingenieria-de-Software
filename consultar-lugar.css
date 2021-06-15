@@ -1,25 +1,25 @@
 #mapid{
-    background: #cccccc;
-  
-    position: absolute;
-  
-    top: 0px;
-    right: 0px;
-    bottom: 0px;
-    left: 0px;
-  
-    margin: 10px 7px 10px 7px;
-  
-  }
+  background: #cccccc;
+
+  position: absolute;
+
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+
+  margin: 10px 7px 10px 7px;
+
+}
 #volver{
-    color:rgb(0, 0, 0);
-    font-family:Verdana;
-    border: none;
-    width: 95%;
-    
-    font-size: 20px;
-    background: #4886e9;
-    padding: 10px 15px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
+  color:rgb(0, 0, 0);
+  font-family:Verdana;
+  border: none;
+  width: 95%;
+  
+  font-size: 20px;
+  background: #4886e9;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+}

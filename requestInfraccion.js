@@ -85,5 +85,3 @@ function cargarTabla(){
     }
 	loadDoc(url);
 }
-
-// falta mejorar la tabla con bootstrap
