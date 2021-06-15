@@ -39,9 +39,9 @@ function bootstrap(lat,lon,nombreDep, dirDep,telefono,horarios) {
     opacity: 1,
     column: 1,
     legends: [{
-      label: "Estacionamiento Actual",
+      label: "Ubicacion Actual",
       type: "image",
-      url: "leaflet/images/icons8-car-30.png"
+      url: "leaflet/images/grua.png"
     }]
   }).addTo(map);
 
@@ -60,7 +60,7 @@ function bootstrap(lat,lon,nombreDep, dirDep,telefono,horarios) {
   var markerMiAcarreo = L.marker(miAcarreo.ubicacion,  {icon: iconoAuto});
   
   //POPUP
-  markerMiAcarreo.bindPopup("<b>Ubicación Actual</b><br>"+"Nombre: "+miAcarreo.nombre+"<br>"+"Calle: "+miAcarreo.calle+"<br>"+"Telefono: "+miAcarreo.telefono+"<br>"+"Horarios: "+miAcarreo.horarios).openPopup();
+  markerMiAcarreo.bindPopup("<b>Ubicación Actual</b><br>"+"<b>Deposito</b><br>"+"Nombre: "+miAcarreo.nombre+"<br>"+"Calle: "+miAcarreo.calle+"<br>"+"Telefono: "+miAcarreo.telefono+"<br>"+"Horarios: "+miAcarreo.horarios).openPopup();
   
   map.addLayer(markerMiAcarreo);
 
