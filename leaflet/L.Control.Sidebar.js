@@ -151,9 +151,13 @@ L.Control.Sidebar = L.Control.extend({
     },
 
     toggle: function () {
-        if (this.isVisible()) {
+        /*if (this.isVisible()) {
             this.hide();
         } else {
+            this.show();
+        }*/
+        if (!this.isVisible()) {
+            
             this.show();
         }
     },
