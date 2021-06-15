@@ -1,7 +1,7 @@
 function bootstrap() {
 
   // ---Se Crea Mapa---
-  var ungsLocation = [-34.5221554, -58.7000067];
+  var ungsLocation = [-34.519747, -58.709157];//-34.5221554, -58.7000067];
 
   var map = L.map('mapid').setView(ungsLocation, 16);
 
