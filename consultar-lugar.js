@@ -165,7 +165,6 @@ function bootstrap() {
     L.latLng(-34.528003, -58.70774),
     L.latLng(-34.52056, -58.699844),
     L.latLng(-34.51568, -58.705552),
-    //L.latLng(-34.513824, -58.707584),
   ]);
 
   var polygonZonaVerde = L.polygon(zonaVerde.limites, {color: 'green'}).addTo(map);
@@ -189,7 +188,6 @@ function bootstrap() {
     ]);
   map.addLayer(clusterZonaVerde);
 
-  //para armar zonas
   var popup = L.popup();
 
   function onMapClick(e) {
@@ -201,5 +199,4 @@ function bootstrap() {
 
   map.on('click', onMapClick);
 
-  //sidebar.show();
 }

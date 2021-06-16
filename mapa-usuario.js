@@ -57,6 +57,8 @@ function bootstrap() {
     }]
   }).addTo(map);
 
+  //Zonas
+
   var zonaAzul = new zona("azul", [
   L.latLng(-34.515594, -58.705654),
   L.latLng(-34.523503, -58.714062),
@@ -72,7 +74,6 @@ function bootstrap() {
     L.latLng(-34.528003, -58.70774),
     L.latLng(-34.52056, -58.699844),
     L.latLng(-34.51568, -58.705552),
-    //L.latLng(-34.513824, -58.707584),
   ]);
 
   var comercios = [];
@@ -86,10 +87,10 @@ function bootstrap() {
   comercios[7] = new comercio("Panaderia La Colonial","colo-2315",zonaVerde,"Eva Peron","487",L.latLng(-34.52349, -58.707939));
 
   var polygonZonaAzul = L.polygon(zonaAzul.limites).addTo(map);
-  //polygonZonaAzul.bindPopup("Zona Azul");
+  polygonZonaAzul.bindPopup("Zona Azul");
 
   var polygonZonaVerde = L.polygon(zonaVerde.limites, {color: 'green'}).addTo(map);
-  //polygonZonaVerde.bindPopup("Zona Verde");
+  polygonZonaVerde.bindPopup("Zona Verde");
 
   // --iconos--
   var iconoComercios = new L.Icon({
@@ -183,7 +184,6 @@ function bootstrap() {
     ]);
   map.addLayer(clusterZonaVerde);
 
-  //para armar zonas
   var popup = L.popup();
 
   function onMapClick(e) {
