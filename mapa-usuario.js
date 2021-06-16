@@ -124,49 +124,49 @@ function bootstrap() {
 
   markersComercios[0].on('click', function () {
     sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[0].nombre+"</h3><br>"+"<i class='fas fa-map-marker'></i>"+" "+comercios[0].calle+" "+comercios[0].altura+
-    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 8:00-20:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Codigo:</strong> "+comercios[0].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[0].zona.color+"<br>"+"<img src=./leaflet/images/imgimperio.png />");
+    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 8:00-20:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Código:</strong> "+comercios[0].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[0].zona.color+"<br>"+"<img src=./leaflet/images/imgimperio.png />");
     sidebar.toggle();
   });
 
   markersComercios[1].on('click', function () {
     sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[1].nombre+"</h3><br>"+"<i class='fas fa-map-marker'></i>"+" "+comercios[1].calle+" "+comercios[1].altura+
-    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 7:00-20:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Codigo:</strong> "+comercios[1].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[1].zona.color+"<br>"+"<img src=./leaflet/images/imgpolleria.png />");
+    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 7:00-20:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Código:</strong> "+comercios[1].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[1].zona.color+"<br>"+"<img src=./leaflet/images/imgpolleria.png />");
     sidebar.toggle();
   });
 
   markersComercios[2].on('click', function () {
     sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[2].nombre+"</h3><br>"+"<i class='fas fa-map-marker'></i>"+" "+comercios[2].calle+" "+comercios[2].altura+
-    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 8:30-20:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Codigo:</strong> "+comercios[2].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[2].zona.color+"<br>"+"<img src=./leaflet/images/panaderiamoderna.png />");
+    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 8:30-20:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Código:</strong> "+comercios[2].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[2].zona.color+"<br>"+"<img src=./leaflet/images/panaderiamoderna.png />");
     sidebar.toggle();
   });
 
   markersComercios[3].on('click', function () {
     sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[3].nombre+"</h3><br>"+"<i class='fas fa-map-marker'></i>"+" "+comercios[3].calle+" "+comercios[3].altura+
-    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 8:00-20:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Codigo:</strong> "+comercios[3].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[3].zona.color+"<br>"+"<img src=./leaflet/images/tienda.png />");
+    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 8:00-20:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Código:</strong> "+comercios[3].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[3].zona.color+"<br>"+"<img src=./leaflet/images/tienda.png />");
     sidebar.toggle();
   });
 
   markersComercios[4].on('click', function () {
     sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[4].nombre+"</h3><br>"+"<i class='fas fa-map-marker'></i>"+" "+comercios[4].calle+" "+comercios[4].altura+
-    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 7:30-19:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Codigo:</strong> "+comercios[4].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[4].zona.color+"<br>"+"<img src=./leaflet/images/centrojimena.png />");
+    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 7:30-19:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Código:</strong> "+comercios[4].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[4].zona.color+"<br>"+"<img src=./leaflet/images/centrojimena.png />");
     sidebar.toggle();
   });
 
   markersComercios[5].on('click', function () {
     sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[5].nombre+"</h3><br>"+"<i class='fas fa-map-marker'></i>"+" "+comercios[5].calle+" "+comercios[5].altura+
-    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 7:00-21:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Codigo:</strong> "+comercios[5].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[5].zona.color+"<br>"+"<img src=./leaflet/images/madeleine.png />");
+    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 7:00-21:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Código:</strong> "+comercios[5].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[5].zona.color+"<br>"+"<img src=./leaflet/images/madeleine.png />");
     sidebar.toggle();
   });
 
   markersComercios[6].on('click', function () {
     sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[6].nombre+"</h3><br>"+"<i class='fas fa-map-marker'></i>"+" "+comercios[6].calle+" "+comercios[6].altura+
-    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 8:30-20:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Codigo:</strong> "+comercios[6].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[6].zona.color+"<br>"+"<img src=./leaflet/images/maxikiosco.png />");
+    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 8:30-20:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Código:</strong> "+comercios[6].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[6].zona.color+"<br>"+"<img src=./leaflet/images/maxikiosco.png />");
     sidebar.toggle();
   });
 
   markersComercios[7].on('click', function () {
     sidebar.setContent("<h1>Comercio</h1><br>"+"<h3>"+comercios[7].nombre+"</h3><br>"+"<i class='fas fa-map-marker'></i>"+" "+comercios[7].calle+" "+comercios[7].altura+
-    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 6:30-21:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Codigo:</strong> "+comercios[7].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[7].zona.color+"<br>"+"<img src=./leaflet/images/panaderiacolonial.png />");
+    ", Provincia de Buenos Aires<br>"+"<i class='fas fa-clock'></i>"+" "+"<strong>Horarios:</strong> 6:30-21:00<br>"+"<i class='fas fa-stream'></i>"+" "+"<strong>Código:</strong> "+comercios[7].codigo+"<br>"+"<i class='fas fa-map-marked'></i>"+" "+"<strong>Zona:</strong> "+comercios[7].zona.color+"<br>"+"<img src=./leaflet/images/panaderiacolonial.png />");
     sidebar.toggle();
   });
 

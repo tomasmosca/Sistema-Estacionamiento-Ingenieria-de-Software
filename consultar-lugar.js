@@ -134,11 +134,11 @@ function bootstrap() {
   // ---Marcadores y Cluster zona Azul---
 
   var markerMiEstacionamiento = L.marker(miEstacionamiento.ubicacion,  {icon: iconoAuto});
-  markerMiEstacionamiento.bindPopup("<b>Estacionamiento Actual</b><br>"+"Codigo: "+miEstacionamiento.codigoUbicacion+"<br>"+"Zona: "+miEstacionamiento.zona.color+"<br>"+"Estado: "+miEstacionamiento.disponibilidad).openPopup();
+  markerMiEstacionamiento.bindPopup("<b>Estacionamiento Actual</b><br>"+"Código: "+miEstacionamiento.codigoUbicacion+"<br>"+"Zona: "+miEstacionamiento.zona.color+"<br>"+"Estado: "+miEstacionamiento.disponibilidad).openPopup();
   markerMiEstacionamiento.on('click', function () {
-    sidebar.setContent("<h1>Estacionamiento Actual</h1><br>"+"<h3>Informacion adicional</h3><br>"+"Su codigo de estacionamiento es "+miEstacionamiento.codigoUbicacion+"<br>"+"Su vehiculo se encuentra en zona "+miEstacionamiento.zona.color
-    +"<br>"+"El estacionamiento actual se encuentra "+miEstacionamiento.disponibilidad+"<br>"+"La patente de su vehiculo es "+miEstacionamiento.patente+"<br>"+"La hora de inicio del estacionamiento fue "
-    +miEstacionamiento.horaInicio+" hs"+"<br>"+"Para obtener el costo de la estadia finalize su estacionamiento desde el menu principal.");
+    sidebar.setContent("<h1>Estacionamiento Actual</h1><br>"+"<h3>Información adicional</h3><br>"+"Su código de estacionamiento es "+miEstacionamiento.codigoUbicacion+"<br>"+"Su vehículo se encuentra en zona "+miEstacionamiento.zona.color
+    +"<br>"+"El estacionamiento actual se encuentra "+miEstacionamiento.disponibilidad+"<br>"+"La patente de su vehículo es "+miEstacionamiento.patente+"<br>"+"La hora de inicio del estacionamiento fue "
+    +miEstacionamiento.horaInicio+" Hs"+"<br>"+"Para obtener el costo de la estadía finalice su estacionamiento desde el menú principal.");
     sidebar.toggle();
   });
   map.addLayer(markerMiEstacionamiento);
@@ -146,7 +146,7 @@ function bootstrap() {
   var markersEstacionamientosAzules = [];
   for(i=0;i<estacionamientosAzules.length;i++){
     markersEstacionamientosAzules[i] = L.marker(estacionamientosAzules[i].ubicacion,  {icon: iconoEstacionamientoAzul});
-    markersEstacionamientosAzules[i].bindPopup("<b>Estacionamiento</b><br>"+"Codigo: "+estacionamientosAzules[i].codigoUbicacion+"<br>"+"Zona: "+estacionamientosAzules[i].zona.color+"<br>"+"Estado: "+estacionamientosAzules[i].disponibilidad).openPopup();
+    markersEstacionamientosAzules[i].bindPopup("<b>Estacionamiento</b><br>"+"Código: "+estacionamientosAzules[i].codigoUbicacion+"<br>"+"Zona: "+estacionamientosAzules[i].zona.color+"<br>"+"Estado: "+estacionamientosAzules[i].disponibilidad).openPopup();
     map.addLayer(markersEstacionamientosAzules[i]);
   }
 
@@ -179,7 +179,7 @@ function bootstrap() {
   var markersEstacionamientosVerdes = [];
   for(i=0;i<estacionamientosVerdes.length;i++){
     markersEstacionamientosVerdes[i] = L.marker(estacionamientosVerdes[i].ubicacion,  {icon: iconoEstacionamientoVerde});
-    markersEstacionamientosVerdes[i].bindPopup("<b>Estacionamiento</b><br>"+"Codigo: "+estacionamientosVerdes[i].codigoUbicacion+"<br>"+"Zona: "+estacionamientosVerdes[i].zona.color+"<br>"+"Estado: "+estacionamientosVerdes[i].disponibilidad).openPopup();
+    markersEstacionamientosVerdes[i].bindPopup("<b>Estacionamiento</b><br>"+"Código: "+estacionamientosVerdes[i].codigoUbicacion+"<br>"+"Zona: "+estacionamientosVerdes[i].zona.color+"<br>"+"Estado: "+estacionamientosVerdes[i].disponibilidad).openPopup();
     map.addLayer(markersEstacionamientosVerdes[i]);
   }
 

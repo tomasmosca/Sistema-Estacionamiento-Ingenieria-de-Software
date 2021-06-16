@@ -10,9 +10,9 @@ function loadDoc(url){
                 var textoAcarreo;
                 if(deposito != undefined){
                     popup=',"'+deposito.nombre+'"'+',"'+deposito.direccion+'"'+',"'+deposito.telefono+'"'+',"'+deposito.horarios+'"';
-                    textoAcarreo = "El vehiculo con infraccion " + "<strong>"+texto.infraccion+"</strong>" + " y patente " + "<strong>"+texto.patente+"</strong>" + 
+                    textoAcarreo = "El vehículo con infracción " + "<strong>"+texto.infraccion+"</strong>" + " y patente " + "<strong>"+texto.patente+"</strong>" + 
                     " se encuentra en el deposito " + "<strong>"+deposito.nombre+"</strong>" + 
-                    " con la direccion " + "<strong>"+deposito.direccion+"</strong>" + ". El numero de telefono es " + "<strong>"+deposito.telefono+"</strong>" + 
+                    " con la dirección " + "<strong>"+deposito.direccion+"</strong>" + ". El número de teléfono es " + "<strong>"+deposito.telefono+"</strong>" + 
                     " y los horarios son " + "<strong>"+deposito.horarios+
                     "<a onclick='vermas()' href='javascript:bootstrap("+deposito.ubicacion.lat+","+deposito.ubicacion.lon+popup+")' id='ver'> Ver en el mapa</a></strong>";
                 }
