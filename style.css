@@ -80,3 +80,6 @@ h1{
 ul{
   list-style: none;
 }
+button:hover{
+  color:rgb(255, 255, 255);
+}

@@ -37,3 +37,6 @@
 #respuestaTexto{
   line-height: 1.5;
 }
+#ver:hover,#cerrar:hover{
+  color:rgb(255, 255, 255);
+}
