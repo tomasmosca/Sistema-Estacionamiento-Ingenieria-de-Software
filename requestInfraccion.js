@@ -15,7 +15,6 @@ function loadDoc(url){
 
             var texto = JSON.parse(this.responseText)               //se convierte el json a objeto
             var infraccion = texto.infracciones;
-            console.log(infraccion);
             celda1.innerHTML = "<strong>ID</strong>";               //se inserta el texto en las celdas(primera fila)
             celda2.innerHTML = "<strong>Tipo</strong>";
             celda3.innerHTML = "<strong>Monto a pagar</strong>";

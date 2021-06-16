@@ -4,7 +4,6 @@ function loadDoc(url){
         if(this.readyState == 4 && this.status == 200){
             var texto = JSON.parse(this.responseText);
             var deposito = texto.acarreo.deposito;
-            console.log(deposito);
 
             if(texto.acarreo.infraccionId != undefined){
                 var textoAcarreo;

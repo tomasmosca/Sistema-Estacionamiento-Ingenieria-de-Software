@@ -1,5 +1,7 @@
 function bootstrap() {
 
+  var paginaPrevia = sessionStorage.getItem('paginaActual');
+
   // ---Se Crea Mapa---
   var ungsLocation = [-34.519747, -58.709157];
 
@@ -133,15 +135,17 @@ function bootstrap() {
 
   // ---Marcadores y Cluster zona Azul---
 
-  var markerMiEstacionamiento = L.marker(miEstacionamiento.ubicacion,  {icon: iconoAuto});
-  markerMiEstacionamiento.bindPopup("<b>Estacionamiento Actual</b><br>"+"Código: "+miEstacionamiento.codigoUbicacion+"<br>"+"Zona: "+miEstacionamiento.zona.color+"<br>"+"Estado: "+miEstacionamiento.disponibilidad).openPopup();
-  markerMiEstacionamiento.on('click', function () {
-    sidebar.setContent("<h1>Estacionamiento Actual</h1><br>"+"<h3>Información adicional</h3><br>"+"Su código de estacionamiento es "+miEstacionamiento.codigoUbicacion+"<br>"+"Su vehículo se encuentra en zona "+miEstacionamiento.zona.color
-    +"<br>"+"El estacionamiento actual se encuentra "+miEstacionamiento.disponibilidad+"<br>"+"La patente de su vehículo es "+miEstacionamiento.patente+"<br>"+"La hora de inicio del estacionamiento fue "
-    +miEstacionamiento.horaInicio+" Hs"+"<br>"+"Para obtener el costo de la estadía finalice su estacionamiento desde el menú principal.");
-    sidebar.toggle();
-  });
-  map.addLayer(markerMiEstacionamiento);
+  if(paginaPrevia == "index-registrado.html"){
+    var markerMiEstacionamiento = L.marker(miEstacionamiento.ubicacion,  {icon: iconoAuto});
+    markerMiEstacionamiento.bindPopup("<b>Estacionamiento Actual</b><br>"+"Código: "+miEstacionamiento.codigoUbicacion+"<br>"+"Zona: "+miEstacionamiento.zona.color+"<br>"+"Estado: "+miEstacionamiento.disponibilidad).openPopup();
+    markerMiEstacionamiento.on('click', function () {
+      sidebar.setContent("<h1>Estacionamiento Actual</h1><br>"+"<h3>Información adicional</h3><br>"+"Su código de estacionamiento es "+miEstacionamiento.codigoUbicacion+"<br>"+"Su vehículo se encuentra en zona "+miEstacionamiento.zona.color
+      +"<br>"+"El estacionamiento actual se encuentra "+miEstacionamiento.disponibilidad+"<br>"+"La patente de su vehículo es "+miEstacionamiento.patente+"<br>"+"La hora de inicio del estacionamiento fue "
+      +miEstacionamiento.horaInicio+" Hs"+"<br>"+"Para obtener el costo de la estadía finalice su estacionamiento desde el menú principal.");
+      sidebar.toggle();
+    });
+    map.addLayer(markerMiEstacionamiento);
+  }
 
   var markersEstacionamientosAzules = [];
   for(i=0;i<estacionamientosAzules.length;i++){
@@ -153,8 +157,11 @@ function bootstrap() {
   var clusterZonaAzul = L.markerClusterGroup();
   clusterZonaAzul.addLayers([
     markersEstacionamientosAzules[0],markersEstacionamientosAzules[1],markersEstacionamientosAzules[2], markersEstacionamientosAzules[3], 
-    markersEstacionamientosAzules[4], markersEstacionamientosAzules[5], markerMiEstacionamiento
+    markersEstacionamientosAzules[4], markersEstacionamientosAzules[5]
     ]);
+  if (paginaPrevia == "index-registrado.html"){
+    clusterZonaAzul.addLayer(markerMiEstacionamiento);
+  }
   map.addLayer(clusterZonaAzul);
 
   // ---Elementos Zona Verde---
